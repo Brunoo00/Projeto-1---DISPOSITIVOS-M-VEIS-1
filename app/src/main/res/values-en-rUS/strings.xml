@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Project 1</string>
+    <string name="img_servico_desc">Service image</string>
+
+    <string name="categoria_beauty">Beauty</string>
+    <string name="categoria_food">Food</string>
+    <string name="categoria_health">Health</string>
+    <string name="categoria_tech">Technology</string>
+    <string name="categoria_education">Education</string>
+    <string name="categoria_others">Others</string>
+</resources>

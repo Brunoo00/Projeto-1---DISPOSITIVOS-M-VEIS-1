@@ -27,7 +27,7 @@ Ao tocar em um serviço, o usuário acessa uma tela de **detalhes**, com a opç�
 
 ## Demonstração
 
-[Vídeo demonstração](imagens/video.webm)
+![Vídeo demonstração](imagens/video.webm)
 
 ---
 

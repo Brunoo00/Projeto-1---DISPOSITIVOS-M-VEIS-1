@@ -21,6 +21,12 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.CadastroActivity"
+            android:exported="false"
+            android:label="Novo Local"
+            android:parentActivityName=".ui.MainActivity" />
+
     </application>
 
 </manifest>

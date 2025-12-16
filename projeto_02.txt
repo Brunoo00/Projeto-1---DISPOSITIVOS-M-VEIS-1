@@ -1,0 +1,56 @@
+Projeto Prático Avaliativo - 2º Bimestre
+ARQDMO1 - Dispositivos Móveis 1
+Professor: Henrique Galati
+IFSP - Campus Araraquara
+Análise e Desenvolvimento de Sistemas
+O cliente da sua primeira entrega, o aplicativo “Guia Pocket - Bairro X” (ou listagem do
+que você escolheu), ficou muito satisfeito com o resultado da primeira versão e o retorno
+positivo da comunidade local. No entanto, após utilizar o aplicativo por um tempo e ouvir o
+feedback dos usuários finais, o cliente identificou novas demandas:
+● Os usuários estão sentindo o aplicativo pesado e lento, especialmente em
+dispositivos mais simples.
+● Muitos moradores expressaram o desejo de cadastrar novos estabelecimentos
+diretamente pelo app.
+Para atender a essas novas demandas, o cliente solicitou uma evolução do sistema, com
+foco em melhor desempenho, persistência local e funcionalidade de cadastro. Sua
+tarefa agora é evoluir o app anterior com foco em cadastro e listagem de novos locais,
+utilizando técnicas de performance com RecyclerView e persistência com Room. A
+navegação entre telas deverá utilizar o mecanismo de Intents e o padrão de retorno com
+ActivityResultLauncher.
+Você deve atualizar o projeto no mesmo repositório do trabalho anterior, mantendo o
+mesmo padrão de organização, e disponibilizar um vídeo explicativo demonstrando o uso
+e a justificativa das decisões adotadas no código.
+
+
+// Etapas:
+1. Lista de Serviços
+○ [RF1-1] A tela principal deverá ser refatorada para uma RecyclerView com
+a lista de locais salvos.
+○ [RF1-2] Cada item da lista deverá exibir uma imagem, o nome do serviço e
+a categoria, utilizando um layout personalizado.
+○ [RF1-3] Deverá haver um EditText na tela principal que permitirá filtrar os
+locais por nome em tempo real.
+
+2. Cadastro
+○ [RF2-1] O usuário poderá adicionar um novo local em uma nova tela
+(CadastroActivity) via botão
+○ [RF2-2] O formulário permitirá:
+● Escolher imagem da galeria, usando ActivityResult;
+● Inserir os dados vistos na Activity de detalhes.
+
+3. Persistência de dados
+○ [RF3-1] Os dados dos locais devem ser persistidos usando o Room.
+○ [RF3-2] A imagem será armazenada via URI (como String) no banco.
+
+
+---
+Requisitos Não Funcionais
+● [RNF1] A aplicação deve ser desenvolvida em Kotlin, utilizando ViewBinding em
+todas as telas e RecyclerView.
+● [RNF2] Adotar ConstraintLayout como base para todas as telas.
+● [RNF3] Boas práticas de código: nomes semânticos, organização por pacotes (ui,
+model, data, adapter, etc.).
+
+
+
+

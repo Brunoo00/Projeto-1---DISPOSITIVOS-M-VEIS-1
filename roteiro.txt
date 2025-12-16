@@ -1,0 +1,44 @@
+ROTEIRO DE APRESENTAÇÃO - PROJETO 2: DISPOSITIVOS MÓVEIS
+
+Bom dia/Boa noite a todos. Eu sou [Seu Nome] e vou apresentar a evolução do aplicativo "Guia Pocket", desenvolvido para a disciplina de Dispositivos Móveis 1.
+
+Este projeto representa uma atualização robusta da versão anterior. O nosso cliente identificou que a versão antiga estava lenta em dispositivos mais simples e que os usuários desejavam cadastrar novos locais. Por isso, nosso foco principal nesta entrega foi modernizar a arquitetura para garantir alto desempenho, implementar persistência de dados local confiável e adicionar funcionalidades de escrita.
+
+Vou detalhar agora cada um dos Requisitos Funcionais implementados, explicando as decisões técnicas tomadas.
+
+Começando pela **Parte 1: Lista de Serviços e Visualização**.
+O primeiro grande desafio foi a performance. O requisito **RF1-1** pedia a refatoração da tela principal. Nós removemos a antiga `ListView`, que era limitada, e implementamos o `RecyclerView`. Para isso, criamos o adapter `ServicoRecyclerAdapter`. A grande vantagem aqui foi o uso do padrão `ViewHolder`, que recicla as views que saem da tela, economizando memória e garantindo uma rolagem extremamente fluida, mesmo se a lista crescer muito.
+
+Visualmente, atendemos ao **RF1-2** criando um layout de item totalmente novo. Abandonamos o layout padrão e criamos o arquivo `item_servico.xml` utilizando o `MaterialCardView`. Isso nos permitiu dar um acabamento moderno com bordas arredondadas e elevação. Dentro de cada card, organizamos a imagem, colocamos o nome do serviço em negrito para destaque, e formatamos a categoria e a descrição com estilos visuais distintos, melhorando a hierarquia da informação.
+
+Ainda na tela principal, implementamos o **RF1-3**, que é o filtro em tempo real. Adicionamos um componente `EditText` no topo. Através de um `TextWatcher` no código, nós capturamos cada letra que o usuário digita e filtramos a lista instantaneamente, ignorando maiúsculas e minúsculas. O Adapter é notificado e atualiza a view sem precisar recarregar a tela inteira.
+
+Passando para a **Parte 2: O Cadastro**.
+No requisito **RF2-1**, criamos a **Nova Tela de Cadastro**. Adicionamos um botão flutuante, o FAB (Floating Action Button), na tela principal. Ele é intuitivo e segue os padrões do Material Design. Ao clicar, o usuário é levado via `Intent` para a `CadastroActivity`.
+
+Nessa tela, atendendo ao **RF2-2**, construímos um formulário completo usando `TextInputLayout` para validação visual. Coletamos Nome, Categoria, Telefone (com teclado numérico configurado) e Descrição.
+O ponto alto dessa tela é o seletor de imagens. Implementamos a integração com a Galeria utilizando a API moderna `ActivityResultContracts.GetContent()`. Isso substitui o método depreciado `startActivityForResult`. O usuário clica em "Selecionar Imagem", o sistema abre a galeria nativa, e ao selecionar a foto, nós a exibimos imediatamente em um preview `ImageView` na tela.
+
+Agora, vamos falar sobre a **Parte 3: Persistência de Dados**, que é o coração da mudança.
+Para o **RF3-1**, escolhemos a biblioteca **Room**, que faz parte do Android Jetpack. Ela fornece uma camada de abstração sobre o SQLite, tornando o banco de dados robusto e fácil de testar.
+Nossa estrutura é composta por três pilares:
+1.  A **Entity** `Servico`: Anotamos nossa classe de modelo com `@Entity`, transformando-a automaticamente em uma tabela do banco.
+2.  O **DAO** (`ServicoDao`): Interface onde definimos os métodos de acesso: Insert, Delete e Query All.
+3.  O **Database** (`AppDatabase`): Um Singleton que gerencia a conexão pesada com o banco, garantindo que o app não trave por abrir múltiplas conexões.
+
+Um detalhe técnico importante no **RF3-2** foi a estratégia de armazenamento de imagens. Salvar a imagem binária (BLOB) direto no banco deixaria o app lento e pesado. Nossa solução foi salvar apenas a URI (o caminho da imagem) como uma String. O banco guarda o endereço, e o Adapter carrega a imagem sob demanda, mantendo o banco leve e a leitura rápida.
+
+**Funcionalidade Extra: Exclusão**
+Além do solicitado, percebemos que um CRUD não estaria completo sem a opção de excluir. Adicionamos na tela de detalhes um botão vermelho "Excluir item". Ao ser acionado, ele invoca o método de delete do DAO, remove o item do banco e retorna o usuário à lista atualizada.
+
+Por fim, os **Requisitos Não Funcionais**, que garantem a qualidade do código.
+**RNF1**: Todo o projeto foi escrito 100% em **Kotlin**, aproveitando recursos como data classes e lambdas. Utilizamos **ViewBinding** em todas as Activities (`ActivityMainBinding`, `ActivityCadastroBinding`), o que eliminou completamente o uso do `findViewById`. Isso previne aquele erro clássico de `NullPointerException` em tempo de execução, pois o ViewBinding garante que a view existe.
+
+**RNF2**: Adotamos o **ConstraintLayout** como raiz de todas as telas. Como ele permite "ancorar" os elementos uns nos outros, conseguimos layouts complexos com uma hierarquia de views "plana" (flat), o que é processado muito mais rápido pelo Android do que vários LinearLayouts aninhados.
+
+**RNF3**: A organização do projeto seguiu as melhores práticas de arquitetura. Separamos o código em pacotes semânticos: `ui` para as telas, `data` para a persistência, `adapter` para o RecyclerView e `model` para as regras de negócio. Isso facilita a manutenção e a entrada de novos desenvolvedores no projeto.
+
+**Conclusão**
+Com essas alterações, o "Guia Pocket" deixou de ser um protótipo simples e se tornou uma aplicação Android robusta. Temos agora alta performance com RecyclerView, persistência confiável com Room, código seguro com ViewBinding e uma experiência de usuário moderna.
+
+Estamos à disposição para dúvidas. Obrigado.

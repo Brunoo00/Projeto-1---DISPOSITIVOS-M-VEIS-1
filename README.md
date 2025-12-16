@@ -36,12 +36,12 @@ Ao tocar em um serviço, o usuário acessa uma tela de **detalhes**, com a opç�
 ## Capturas de tela
 
 ### Tema Claro
-![Tema Claro](imagens/Tema_Claro..jpeg)
-![Tema Claro](imagens/Tema_Claro2..jpeg)
+![Tema Claro](imagens/Tema_Claro.jpeg)
+![Tema Claro](imagens/Tema_Claro2.jpeg)
 
 ### Tema Escuro
-![Tema Escuro](imagens/Tema_Dark..jpeg)
-![Tema Escuro](imagens/Tema_Dark2..jpeg)
+![Tema Escuro](imagens/Tema_Dark.jpeg)
+![Tema Escuro](imagens/Tema_Dark2.jpeg)
 
 ---
 

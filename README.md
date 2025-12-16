@@ -27,25 +27,21 @@ Ao tocar em um serviço, o usuário acessa uma tela de **detalhes**, com a opç�
 
 ## Demonstração
 
-[Vídeo demonstração](https://drive.google.com/file/d/1GznYAAkFxQh0A6O6ze1khbnBRW6fCjA0/view?usp=drive_link)
+[Vídeo demonstração](https://drive.google.com/file/d/1BI18rUlma50YaxGBYhbgZtIkZu0Ghv_l/view?usp=drive_link)
+
+[Vídeo Explicação](https://drive.google.com/file/d/14loBvLahUqsi7zkAXehq3v8ntyBpYN4z/view?usp=drive_link)
 
 ---
 
 ## Capturas de tela
 
 ### Tema Claro
-![Tema Claro](imagens/Tema_Claro.png)
-![Tema Claro](imagens/Tema_Claro2.png)
+![Tema Claro](imagens/Tema_Claro..jpeg)
+![Tema Claro](imagens/Tema_Claro2..jpeg)
 
 ### Tema Escuro
-![Tema Escuro](imagens/Tema_Dark.png)
-![Tema Escuro](imagens/Tema_Dark2.png)
-
-### Aplicativo em Português
-![App em Português](imagens/Idioma_Padrao.png)
-
-### Aplicativo em Inglês
-![App em Inglês](imagens/Idioma_Ingles.png)
+![Tema Escuro](imagens/Tema_Dark..jpeg)
+![Tema Escuro](imagens/Tema_Dark2..jpeg)
 
 ---
 
